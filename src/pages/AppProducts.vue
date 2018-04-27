@@ -13,6 +13,8 @@
             <td>{{ product.id }}</td>
             <td>{{ product.title }}</td>
             <td>{{ product.quantity }}</td>
+            <button @click="incrementQuantity(product)" class="btn btn-default">+</button>
+            <button @click="decrementQuantity(product)" class="btn btn-default" v-if="product.quantity">-</button>
           </tr>
         </tbody>
       </table>
@@ -35,6 +37,14 @@ export default {
       return this.products.filter((product) => {
         return product.title.toLowerCase().includes(this.searchTerm.toLowerCase())
       });
+    }
+  },
+  methods: {
+    incrementQuantity(product) {
+      productService.incrementQuantity(product);
+    },
+    decrementQuantity(product) {
+      productService.decrementQuantity(product);
     }
   }
 }

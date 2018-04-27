@@ -1,5 +1,5 @@
 const products = [
-  {id: 1, title: 'Umbrella', quantity: 50},
+  {id: 1, title: 'Umbrella', quantity: 5},
   {id: 2, title: 'Car', quantity: 150},
   {id: 3, title: 'Doll', quantity: 250},
   {id: 4, title: 'Knife', quantity: 350},
@@ -9,6 +9,14 @@ const products = [
 export default class CustomerService {
     list() {
       return products
+    }
+
+    incrementQuantity(product) {
+        product.quantity++
+    }
+
+    decrementQuantity(product) {
+        product.quantity--
     }
 }
 
