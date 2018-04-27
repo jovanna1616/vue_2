@@ -13,6 +13,16 @@ export default class CustomerService{
     removeCustomer(customer) {
       customers.splice(customers.indexOf(customer), 1);
     }
+    
+    addCustomer(newCustomer) {
+      customers.push(newCustomer);
+      newCustomer = {
+        id: '',
+        firstName: '',
+        lastName: '',
+        email: ''
+      }
+    }
 }
     
 export const customerService = new CustomerService()
