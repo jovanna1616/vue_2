@@ -25,6 +25,7 @@
           <td>{{ customer.firstName }}</td>
           <td>{{ customer.lastName }}</td>
           <td>{{ customer.email }}</td>
+          <router-link :to="'/customers/'+ customer.id">Latest purchases <span class="sr-only">(current)</span></router-link>
           <td><button @click="removeCustomer(customer)">Remove customer</button></td>
         </tr>
       </tbody>
