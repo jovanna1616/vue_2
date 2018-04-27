@@ -11,7 +11,7 @@ export default class CustomerService{
     }
 
     removeCustomer(customer) {
-      customers.splice(customers.indexOf(customer));
+      customers.splice(customers.indexOf(customer), 1);
     }
 }
     
